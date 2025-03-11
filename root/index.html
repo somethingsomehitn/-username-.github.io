@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sophie Martin | Automation Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF7F7F;  /* Soft coral */
+            --secondary: #6C9BCF;  /* Powder blue */
+            --light: #FFF9F5;  /* Warm white */
+            --dark: #4A4A4A;
+            --accent: #FFD6C2;  /* Peach */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            margin: 0;
+            line-height: 1.6;
+            background-color: var(--light);
+        }
+
+        .glass-nav {
+            padding: 1.5rem 5%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            position: fixed;
+            width: 90%;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            border-radius: 0 0 15px 15px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+
+        .hero {
+            margin-top: 120px;
+            padding: 6rem 5%;
+            text-align: center;
+            background: linear-gradient(45deg, var(--accent) 0%, var(--light) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .skills-grid {
+            display: grid;
+            gap: 2rem;
+            padding: 4rem 5%;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .skill-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-align: center;
+            position: relative;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            z-index: -1;
+            border-radius: 22px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .skill-card:hover::before {
+            opacity: 0.3;
+        }
+
+        .cta-button {
+            background: var(--primary);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255,127,127,0.3);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255,127,127,0.4);
+        }
+
+        .decorative-wave {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="%23ffffff" fill-opacity="1" d="M0,160L48,170.7C96,181,192,203,288,186.7C384,171,480,117,576,117.3C672,117,768,171,864,197.3C960,224,1056,224,1152,218.7C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+        }
+
+        .project-card {
+            background: white;
+            margin: 2rem 5%;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="glass-nav">
+        <div class="logo">Sophie Martin</div>
+        <ul style="list-style: none; display: flex; gap: 2.5rem; margin: 0;">
+            <li><a href="#skills" style="text-decoration: none; color: var(--dark); font-weight: 500;">Expertise</a></li>
+            <li><a href="#projects" style="text-decoration: none; color: var(--dark); font-weight: 500;">Work</a></li>
+            <li><a href="#contact" style="text-decoration: none; color: var(--dark); font-weight: 500;">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h1>Transforming Business Through Elegant Automation</h1>
+            <p style="font-size: 1.2rem; color: var(--dark); margin-bottom: 2rem;">
+                Creating seamless workflows with technical precision & human-centric design
+            </p>
+            <button class="cta-button">View My Projects</button>
+        </div>
+        <div class="decorative-wave"></div>
+    </section>
+
+    <section id="skills" style="padding: 6rem 5%; background: white;">
+        <h2 style="text-align: center; font-family: 'Playfair Display'; font-size: 2.5rem; margin-bottom: 4rem;">
+            Technical Expertise
+        </h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div style="width: 80px; height: 80px; background: var(--accent); border-radius: 50%; margin: 0 auto 1.5rem;"></div>
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">Workflow Automation</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.8rem;">Google Apps Script</li>
+                    <li style="margin-bottom: 0.8rem;">Python Scripting</li>
+                    <li>Zapier Integration</li>
+                </ul>
+            </div>
+            
+            <div class="skill-card">
+                <div style="width: 80px; height: 80px; background: var(--secondary); border-radius: 50%; margin: 0 auto 1.5rem;"></div>
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">Data Solutions</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.8rem;">Looker Studio</li>
+                    <li style="margin-bottom: 0.8rem;">BigQuery</li>
+                    <li>ETL Pipelines</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add subtle animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.skill-card').forEach((card) => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease-out';
+            observer.observe(card);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
